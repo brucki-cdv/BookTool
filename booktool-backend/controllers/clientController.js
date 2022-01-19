@@ -1,14 +1,22 @@
-const Client = require('../models/clientModel')
+const Client = require('../models/clientModel');
+const AppError = require('../utils/appError');
 
 exports.createClient = async (req, res, next) => {
     try{
+        const {firstName, lastName, email, phoneNumber} = req.body;
+        if(!firstName || !lastName || !email || !phoneNumber) {
+            return next(new AppError("Please provide all informations", 400));
+        }
         const newClient = await Client.create(req.body);
+        if(!newClient) {
+            return next(new AppError("Can not create a client", 400));
+        }
+
         res.status(201).json({
-            status: 'success added data',
-            data: {
-             newClient
-            }
+            status: 'success',
+            newClient
         })
+
     } catch(err){
         console.log(err.message);
     }
@@ -18,14 +26,14 @@ exports.getClient = async (req, res, next) => {
     try{
         const client = await Client.findById(req.params.id);
         if(!client){
-            return next('Can not find client with this Id');
+            return next(new AppError('Can not find client', 400));
         }
+
         res.status(200).json({
             status: 'success',
-            data: {
-              client
-            }
+            client
           });
+
     } catch(err){
         console.log(err.message);
     }
@@ -35,14 +43,14 @@ exports.getClients = async (req, res, next) => {
     try{
         const clients = await Client.find();
         if(!clients){
-            return next('Clients not found');
+            return next(new AppError('Can not find clients', 400));
         }
+
         res.status(200).json({
             status: 'success',
-            data: {
-              clients
-            }
+            clients
           });
+
     } catch(err){
         console.log(err.message);
     }
@@ -56,14 +64,12 @@ exports.updateClient = async (req, res, next) => {
           });
 
           if(!client){
-              return next('Can not update client');
-          }
+            return next(new AppError('Can not find client', 400));
+        }
 
-          res.status(200).json({
+        res.status(200).json({
             status: 'success',
-            data: {
-              client
-            }
+            client
           });
 
     } catch(err){
@@ -73,16 +79,16 @@ exports.updateClient = async (req, res, next) => {
 
 exports.deleteClient = async (req, res, next) => {
     try{
-        const client = await Client.findByIdAndDelete(req.params.id)
+        const client = await Client.findByIdAndDelete(req.params.id);
+
         if(!client){
-            return next('None client find with this Id');
+            return next(new AppError('Can not find client', 400));
         }
 
-        res.status(204).json({
+        res.status(200).json({
             status: 'success',
-            data: null
+            client
           });
-
 
     } catch(err){
         console.log(err.message)

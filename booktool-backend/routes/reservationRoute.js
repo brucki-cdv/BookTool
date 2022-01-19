@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const reservationController = require('./../controllers/reservationController');
+const authController = require('./../controllers/authController');
 
+router.use(authController.protectRoute)
 
 router.get('/', reservationController.getReservations)
 router.get('/:id', reservationController.getReservation)

@@ -1,7 +1,9 @@
 const express = require('express');
-const clientController = require('../controllers/clientController')
+const clientController = require('../controllers/clientController');
+const authController = require('../controllers/authController');
 const router = express.Router();
 
+router.use(authController.protectRoute);
 
 router.get('/', clientController.getClients);
 router.get('/:id', clientController.getClient);
