@@ -1,0 +1,36 @@
+.reservation-status .status li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.status li span:nth-child(2) {
+    margin-left: 20px;
+}
+
+.reservation-status .status .status__icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.status__icon.anulowano {
+    background-color: #FF4C41;
+}
+
+.status__icon.zaplacono {
+    background-color: #12DC26;
+}
+
+.status__icon.oczekuje {
+    background-color: #FFA841;
+}
+
+

@@ -1,0 +1,15 @@
+.information-card__icon {
+  height: 65px;
+  min-width: 65px;
+  border-radius: 8px;
+  background-color: purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.information-card__icon .icon-container {
+    color: white;
+    transform: scale(1.2);
+}

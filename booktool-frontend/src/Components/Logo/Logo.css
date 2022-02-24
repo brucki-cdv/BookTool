@@ -1,0 +1,31 @@
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.logo-container .logo__graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  min-width: 60px;
+  background: #565ba3;
+  border-radius: 6px;
+}
+
+.logo-container span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: white;
+  opacity: 1;
+}
+
+.sidebar-container.close .logo-container .header__brand-name{
+  opacity: 0;
+}
+
+

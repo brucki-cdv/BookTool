@@ -1,0 +1,10 @@
+.input-date {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.input-date input {
+    margin-top: 5px;
+    display: block;
+}
+

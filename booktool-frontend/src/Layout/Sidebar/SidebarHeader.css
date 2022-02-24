@@ -1,0 +1,11 @@
+.sidebar__header .header__search-bar {
+    margin-top: 40px;
+}
+
+.sidebar__header .header__brand-name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 20px;
+}

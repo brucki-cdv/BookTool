@@ -1,0 +1,57 @@
+.messages__message {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.messages__message .message__text-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.message__text-container .message__name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+
+}
+
+.messages__message li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.messages__message .icon-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messages__message.anulowano .icon-container {
+    background-color: #FF4C41;
+    border-radius: 8px;
+    color: white;
+} 
+
+.messages__message.dodano .icon-container {
+    background-color: #12DC26;
+    border-radius: 8px;
+    color: white;
+} 
+
+.messages__message.anulowano .icon-container {
+    background-color: #FF4C41;
+    border-radius: 8px;
+    color: white;
+} 
+
+.messages__message.termin .icon-container {
+    background-color: #1263DC;
+    border-radius: 8px;
+    color: white;
+} 
+

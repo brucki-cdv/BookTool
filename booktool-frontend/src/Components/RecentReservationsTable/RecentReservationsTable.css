@@ -1,0 +1,37 @@
+.details__recent-reservations-table {
+  width: 100%;
+  position: relative;
+}
+
+.wrapper__header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.wrapper__header .options {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-end;
+  right: 0;
+}
+
+.wrapper__header .options .select-options {
+  margin-right: 30px;
+}
+
+.table__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 80px;
+  background-color: rgb(109, 113, 249);
+  border-radius: 8px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}

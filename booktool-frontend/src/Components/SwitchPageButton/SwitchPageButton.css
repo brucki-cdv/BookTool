@@ -1,0 +1,20 @@
+.switch-page ul {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.switch-page li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.switch-page__button .icon-container {
+    color: grey;
+}

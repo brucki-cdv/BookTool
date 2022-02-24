@@ -1,0 +1,21 @@
+.error-form-message {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+    color: red;
+}
+
+.error-form-message .icon-container {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    color: red;
+}
+
+.error-form-message span {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    margin-left: 30px;
+}

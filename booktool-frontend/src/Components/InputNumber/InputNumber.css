@@ -1,0 +1,10 @@
+.input-number {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.input-number input {
+    display: block;
+    margin-top: 5px;
+}

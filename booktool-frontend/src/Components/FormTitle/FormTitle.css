@@ -1,0 +1,16 @@
+.form-title{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #54599b;
+}
+
+.form-title::before{
+    content: "";
+    top: 50px;
+    position: absolute;
+    border-bottom: 5px solid #54599b;
+    width: 10%;
+}
+

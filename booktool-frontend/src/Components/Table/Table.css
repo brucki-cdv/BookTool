@@ -1,0 +1,81 @@
+.table__body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: auto;
+}
+
+.table__body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  
+}
+
+.table__body table thead td {
+  font-weight: 600;
+}
+
+.table__body table thead th {
+    padding: 10px;
+}
+
+.table__body table th {
+    text-align: left;
+}
+
+.table__body table tr {
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table__body table tr:last-child {
+    border-bottom: none;
+}
+
+
+.table__body table tr td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table__body table thead th:last-child {
+   text-align: center;
+}
+
+.table__body table tr td:last-child {
+    text-align: center;
+}
+
+
+.table__body table tbody tr:hover {
+  background-color: rgb(109, 113, 249);
+  color: white;
+}
+
+.table__body table tbody tr td .body__status {
+    cursor: pointer;
+}
+
+.table__body table tbody tr td .body__status.zaplacono{
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+
+.table__body table tbody tr td .body__status.oczekuje{
+    background-color: #FFA841;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+
+.table__body table tbody tr td .body__status.anulowano{
+    background-color: #FF4C41;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+
+.searchbar-container {
+  width: 200px;
+}

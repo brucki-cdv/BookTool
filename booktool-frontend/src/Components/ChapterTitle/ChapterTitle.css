@@ -1,0 +1,9 @@
+.chapter-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  border-bottom:1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

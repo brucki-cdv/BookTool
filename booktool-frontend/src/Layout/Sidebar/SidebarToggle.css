@@ -1,0 +1,14 @@
+.sidebar__toggle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    background-color: #565ba3;
+    right: -16px;
+    top: 20px;
+}
+
+.sidebar__toggle .icon-container {
+    color: white;
+    cursor: pointer;
+}

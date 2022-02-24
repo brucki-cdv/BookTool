@@ -1,0 +1,19 @@
+.information-card__content {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin: 20px;
+}
+
+.information-card__content .card-content__title {
+    font-size: 1.5rem;
+}
+
+.information-card__content .card-content__number {
+    font-size: 4rem;
+    margin-top: 20px;
+    
+}

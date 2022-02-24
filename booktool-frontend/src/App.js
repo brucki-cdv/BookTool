@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login/Login";
+import Home from "./Pages/Home/Home";
+import ReservationsList from "./Pages/ReservationsList/ReservationsList";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Analytics from "./Pages/Analytics/Analytics";
+import Messages from "./Pages/Messages/Messages";
+import Clients from "./Pages/Clients/Clients";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/rezerwacje/lista" element={<ReservationsList />} />
+          {/* <Route path="rezerwacje/kalendarz" element={<ReservationsCalendar />}/> */}
+          <Route path="/analizy" element={<Analytics />} />
+          <Route path="/klienci" element={<Clients />} />
+          <Route path="/wiadomosci" element={<Messages />} />
+        </Route>
+        <Route path="/logowanie" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

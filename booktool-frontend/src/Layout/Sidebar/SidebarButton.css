@@ -1,0 +1,49 @@
+.body__sidebar-button li {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.body__sidebar-button li a {
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.body__sidebar-button li:hover {
+    background-color: #3a3b3c;
+    border-radius: 8px;  
+}
+
+.body__sidebar-button li span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.body__sidebar-button i {
+    color: white;
+}
+
+.body__sidebar-button .icon-container {
+    min-width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.sidebar-button__text {
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar-container.close .sidebar-button__text{
+    opacity: 0;
+}
