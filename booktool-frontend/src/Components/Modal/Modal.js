@@ -1,14 +1,15 @@
 import "./Modal.css";
-import ModalBackdrop from "./ModalBackdrop"
+import ModalBackdrop from "./ModalBackdrop";
 import ReactDOM from "react-dom";
 import React from "react";
 const Modal = (props) => {
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(
-        <ModalBackdrop />,
-        document.getElementById("modal-root")
-      )}
+      {props.isOpen &&
+        ReactDOM.createPortal(
+          <ModalBackdrop/>,
+          document.getElementById("modal-root")
+        )}
     </React.Fragment>
   );
 };

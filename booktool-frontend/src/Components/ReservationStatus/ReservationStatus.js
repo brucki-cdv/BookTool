@@ -1,29 +1,36 @@
 import "./ReservationStatus.css";
 import MaterialIcon from "../MaterialIcon/MaterialIcon";
+import { useState, useEffect } from "react";
 
 const ReservationStatus = (props) => {
+  const [statusPicker, setStatusPicker] = useState("");
+
+  const setCancelled = () => setStatusPicker("cancelled");
+  const setPaid = () => setStatusPicker("paid");
+  const setWaiting = () => setStatusPicker("waiting");
+
   return (
     <div className="reservation-status">
-      <div className="status">
+      <div className="status" onClick={setCancelled}>
         <li>
           <span className="status__icon anulowano">
-            <MaterialIcon name="done"/>
+            {statusPicker == "cancelled" && <MaterialIcon name="done" />}
           </span>
           <span>Anulowano</span>
         </li>
       </div>
-      <div className="status">
+      <div className="status" onClick={setPaid}>
         <li>
           <span className="status__icon zaplacono">
-            <MaterialIcon name="done"/>
+            {statusPicker == "paid" && <MaterialIcon name="done" />}
           </span>
           <span>Zaplacono</span>
         </li>
       </div>
-      <div className="status">
+      <div className="status" onClick={setWaiting}>
         <li>
           <span className="status__icon oczekuje">
-            <MaterialIcon name="done"/>
+            {statusPicker == "waiting" && <MaterialIcon name="done" />}
           </span>
           <span>Oczekuje</span>
         </li>

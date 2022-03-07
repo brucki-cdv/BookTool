@@ -6,9 +6,9 @@ const SelectOptions = (props) => {
   return (
     <div className="select-options">
       <label for={props.id}>{props.label}</label>
-      <select name={props.name} id={props.id}>
+      <select name={props.name} id={props.id} onChange={props.onChange} value={props.value}>
         {options.map((val) => {
-          return <option value={val}>{val}</option>;
+          return <option value={val.value} >{val.name}</option>;
         })}
       </select>
     </div>

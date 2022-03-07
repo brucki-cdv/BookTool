@@ -1,9 +1,34 @@
 import "./Table.css";
-import SearchBar from "../SearchBar/SearchBar";
 const Table = (props) => {
-  const { head, body } = props;
-  console.log(head);
-  console.log(body);
+  const { head, body, searchbarInput } = props;
+
+  const FilterRecords = () => {
+    return (body
+      .filter((val) => {
+        if (searchbarInput === "") {
+          return val;
+        } else if (
+          val.firstName.toLowerCase().includes(searchbarInput.toLowerCase()) ||
+          val.lastName.toLowerCase().includes(searchbarInput.toLowerCase()) ||
+          val.email.toLowerCase().includes(searchbarInput.toLowerCase()) ||
+          val.phoneNumber.toLowerCase().includes(searchbarInput.toLowerCase())
+        ) {
+          return val;
+        }
+      })
+      .map((val) => {
+        return (
+          <tr>
+            <td>{val._id}</td>
+            <td>{val.firstName}</td>
+            <td>{val.lastName}</td>
+            <td>{val.email}</td>
+            <td>{val.phoneNumber}</td>
+          </tr>
+        );
+      }));
+  };
+
   return (
     <div className="table__body">
       <table>
@@ -15,15 +40,7 @@ const Table = (props) => {
           </tr>
         </thead>
         <tbody>
-          {body.map((data) => {
-            return (
-              <tr>
-                {data.map((val) => {  
-                  return <td>{val}</td>;
-                })}
-              </tr>
-            );
-          })}
+          <FilterRecords />
         </tbody>
       </table>
     </div>

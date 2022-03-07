@@ -4,12 +4,12 @@ const SwitchPageButton = (props) => {
   return (
     <div className="switch-page">
       <ul>
-        <li>
+        <li onClick={props.onLeftButtonClick}>
           <span className="switch-page__button">
             <MaterialIcon name="chevron_left" />
           </span>
         </li>
-        <li>
+        <li onClick={props.onRightButtonClick}>
           <span className="switch-page__button">
             <MaterialIcon name="chevron_right" />
           </span>

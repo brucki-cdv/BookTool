@@ -7,71 +7,87 @@ import SubmitButton from "../../Components/SubmitButton/SubmitButton";
 import MutedLink from "../../Components/MutedLink/MutedLink";
 
 import { useState, useEffect } from "react";
-import {
-  checkIfEmailIsValid,
-  checkIfPasswordIsValid,
-} from "../../Services/login-validation";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../Actions/auth";
+import ErrorFormMessage from "../../Components/FormErrorMessage/FormErrorMessage";
 
 const LoginContent = (props) => {
-  const [emailInput, setEmailInput] = useState("");
-  const [passwordInput, setPasswordInput] = useState("");
-  const [errorMessage, setErrorMessage] = useState({ email: "", password: "" });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState({});
+  const [formIsValid, setFormIsValid] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { message } = useSelector((state) => state.message);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const emailInputChangeHandler = (event) => {
-    setEmailInput(event.target.value);
+  const onChangeEmail = (e) => {
+    const email = e.target.value;
+    setEmail(email);
   };
 
-  const passwordInputChangeHandler = (event) => {
-    setPasswordInput(event.target.value);
+  const onChangePassword = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+
+  const formValidation = () => {
+    setFormIsValid(true);
+    setError({});
+
+    if (email.length < 8) {
+      setFormIsValid(false);
+      setError((prevState) => {
+        return { ...prevState, email: "Email is not valid" };
+      });
+    }
+
+    if (password.length < 8) {
+      console.log("password lenght");
+
+      setFormIsValid(false);
+      setError((prevState) => {
+        return { ...prevState, password: "Password is not valid" };
+      });
+    }
+
+    if (!email) {
+      console.log("email empy");
+
+      setFormIsValid(false);
+      setError((prevState) => {
+        return { ...prevState, email: "Can not be empty" };
+      });
+    }
+
+    if (!password) {
+      setFormIsValid(false);
+      console.log("password emp");
+
+      setError((prevState) => {
+        return { ...prevState, password: "Can not be empty" };
+      });
+    }
+
   };
 
   const formHandler = (e) => {
-    setErrorMessage((prevState) => {
-      return {
-        ...prevState,
-        email: checkIfEmailIsValid(emailInput),
-      };
-    });
-
-    setErrorMessage((prevState) => {
-      return {
-        ...prevState,
-        password: checkIfPasswordIsValid(passwordInput),
-      };
-    });
-
-    if (
-      errorMessage.email === undefined &&
-      errorMessage.password === undefined
-    ) {
-      navigate("/dashboard");
-    }
-
-    console.log("EMAIL INPUT = ", emailInput);
-    console.log("PASSWORD INPUT = ", passwordInput);
-    console.log("EMAIL ERROR = ", errorMessage.email);
-    console.log("PASSWORD ERROR = ", errorMessage.password);
-
     e.preventDefault();
+    setLoading(true);
+    formValidation();
+    if (formIsValid) {
+      dispatch(login(email, password)).then((e) => console.log(e));
+    }
   };
 
-  useEffect(() => {
-    setErrorMessage((prevState) => {
-      return {
-        ...prevState,
-        email: checkIfEmailIsValid(emailInput),
-      };
-    });
+  if (isLoggedIn) {
+    navigate("/dashboard");
+    console.log("navigate!");
+  }
 
-    setErrorMessage((prevState) => {
-      return {
-        ...prevState,
-        password: checkIfPasswordIsValid(passwordInput),
-      };
-    });
-  }, []);
+  console.log(formIsValid);
 
   return (
     <div className="login-content">
@@ -83,10 +99,11 @@ const LoginContent = (props) => {
           label="Email"
           icon="mail"
           placeholder="Podaj email"
-          onChange={emailInputChangeHandler}
+          onChange={onChangeEmail}
+          isValid={error.email ? false : true}
         />
-        {errorMessage.email && (
-          <FormErrorMessage message={errorMessage.email} />
+        {!formIsValid && error.email && (
+          <ErrorFormMessage message={error.email} />
         )}
         <InputField
           type="password"
@@ -94,11 +111,11 @@ const LoginContent = (props) => {
           label="Hasło"
           icon="lock"
           placeholder="Podaj hasło"
-          inputRef={passwordInput}
-          onChange={passwordInputChangeHandler}
+          onChange={onChangePassword}
+          isValid={error.password ? false : true}
         />
-        {errorMessage.password && (
-          <FormErrorMessage message={errorMessage.password} />
+        {!formIsValid && error.password && (
+          <ErrorFormMessage message={error.password} />
         )}
         <SubmitButton value="Zaloguj się!" />
         <MutedLink text="Nie masz konta? Zarejestruj się!" />

@@ -36,8 +36,20 @@
   border-bottom: 2px solid purple;
 }
 
-.reservations-list__body {
+.reservations-list__body-all {
   padding: 20px;
+}
+
+.reservations-list__body-cancelled {
+  padding: 20px;
+}
+
+.reservations-list__body-all.hidden {
+  display: none;
+}
+
+.reservations-list__body-cancelled.hidden {
+  display: none;
 }
 
 .reservation {
@@ -45,9 +57,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  
 }
 
 .reservation .reservation__house {

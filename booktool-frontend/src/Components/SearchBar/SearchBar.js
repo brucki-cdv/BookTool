@@ -8,7 +8,7 @@ const SearchBar = (props) => {
     <div className={style}>
       <li>
         <MaterialIcon name="search"/>
-        <input type="text" placeholder={props.placeholder} />
+        <input type="text" placeholder={props.placeholder} onChange={props.onChange}/>
       </li>
     </div>
   );
