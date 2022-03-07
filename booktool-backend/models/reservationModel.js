@@ -17,8 +17,7 @@ const reservationSchema = mongoose.Schema({
     },
     client: {
         type: mongoose.SchemaTypes.ObjectId,
-        require: true,
-        unique: true,
+        require: true
     },
     adults: {
         type: Number,
@@ -35,6 +34,7 @@ const reservationSchema = mongoose.Schema({
     status: {
         type: String,
         require: true,
+        enum: ['paid', 'waiting', 'cancelled']
     },
     createdAt: {
         type: Date,
