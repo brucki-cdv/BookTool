@@ -1,5 +1,5 @@
 import "./CardIcon.css";
-import MaterialIcon from "../../Components/MaterialIcon/MaterialIcon";
+import MaterialIcon from "../../Components/MaterialIcon";
 const CardIcon = (props) => {
     return (
         <div className="information-card__icon" style={{background: `${props.bgColor}`}}>

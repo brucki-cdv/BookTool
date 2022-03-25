@@ -1,11 +1,8 @@
 import "./MaterialIcon.css";
+import classnames from "classnames";
 
-const MaterialIcon = (props) => {
-  return (
-    <div className="icon-container">
-      <i className="material-icons">{props.name}</i>
-    </div>
-  );
+const MaterialIcon = ({ className, name }) => {
+  return <i className={classnames("material-icons", className)}>{name}</i>;
 };
 
 export default MaterialIcon;

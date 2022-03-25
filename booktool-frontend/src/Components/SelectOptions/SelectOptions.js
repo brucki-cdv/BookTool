@@ -1,14 +1,19 @@
 import "./SelectOptions.css";
+import classnames from "classnames";
 
-const SelectOptions = (props) => {
-  let options = props.options;
+const SelectOptions = ({options, ...props}) => {
 
   return (
-    <div className="select-options">
+    <div className={classnames(props.className, "select-options")}>
       <label for={props.id}>{props.label}</label>
-      <select name={props.name} id={props.id} onChange={props.onChange} value={props.value}>
+      <select
+        name={props.name}
+        id={props.id}
+        onChange={props.onChange}
+        value={props.value}
+      >
         {options.map((val) => {
-          return <option value={val.value} >{val.name}</option>;
+          return <option value={val}>{val}</option>;
         })}
       </select>
     </div>

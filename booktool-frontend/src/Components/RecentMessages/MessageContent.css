@@ -1,0 +1,11 @@
+.messages__message .message__text-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+}
+
+.message__text-container .message__name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+
+}

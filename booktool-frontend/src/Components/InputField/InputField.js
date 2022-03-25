@@ -1,22 +1,23 @@
 import "./InputField.css";
-import MaterialIcon from "../../Components/MaterialIcon/MaterialIcon";
+import MaterialIcon from "../../Components/MaterialIcon";
+import Label from "./Label";
+import Container from "../Container";
+import InputIcon from "./InputIcon";
+import Input from "./Input";
 
 const InputField = (props) => {
   const errorClass = props.isValid ? "" : "error";
   return (
-    <div className={"input-container " + errorClass}>
-      <label for={props.id}>{props.label}</label>
-      <div className="icon-container">
-        <MaterialIcon name={props.icon} />
-      </div>
-      <input
+    <Container className={"input-container " + errorClass}>
+      <Label label={props.label} />
+      <InputIcon name={props.icon} />
+      <Input
         type={props.type}
-        id={props.id}
+        name={props.name}
         placeholder={props.placeholder}
         onChange={props.onChange}
-        value={props.value}
       />
-    </div>
+    </Container>
   );
 };
 

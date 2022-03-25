@@ -1,0 +1,7 @@
+.reservation .reservation__options li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+  }

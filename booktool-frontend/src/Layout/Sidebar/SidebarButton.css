@@ -37,7 +37,6 @@
 
 .body__sidebar-button .icon-container {
     min-width: 60px;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +48,7 @@
     font-weight: 500;
     white-space: nowrap;
     opacity: 1;
+    padding-left: 60px;
 }
 
 .sidebar-container.close .sidebar-button__text{

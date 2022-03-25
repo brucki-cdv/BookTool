@@ -1,11 +1,10 @@
 import "./DetailsContainer.css";
+import Container from "../Container";
 
 const DetailsContainer = (props) => {
-    return (
-        <div className="home__details-container">
-            {props.children}
-        </div>
-    )
-}
+  return (
+    <Container className="home__details-container">{props.children}</Container>
+  );
+};
 
 export default DetailsContainer;

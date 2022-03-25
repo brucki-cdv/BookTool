@@ -1,18 +1,20 @@
 import "./Login.css";
-import MainContainer from "../../Components/MainContainer/MainContainer";
-import ContentWrapper from "../../Components/ContentWrapper/ContentWrapper";
-import LoginContent from "./LoginContent";
-import WrapperCover from "../../Components/WrapperCover/WrapperCover";
+import MainContainer from "../../Components/MainContainer";
+import Wrapper from "../../Components/Wrapper";
+import LoginContainer from "./LoginContainer";
+import WrapperCover from "../../Components/WrapperCover";
+import Container from "../../Components/Container";
+
 
 const Login = (props) => {
   return (
     <MainContainer>
-      <div className="center-div">
-        <ContentWrapper>
-          <LoginContent />
+      <Container className="center-div">
+        <Wrapper>
+          <LoginContainer/>
           <WrapperCover />
-        </ContentWrapper>
-      </div>
+        </Wrapper>
+      </Container>
     </MainContainer>
   );
 };

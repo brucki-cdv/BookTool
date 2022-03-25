@@ -11,7 +11,8 @@ const Table = (props) => {
           val.firstName.toLowerCase().includes(searchbarInput.toLowerCase()) ||
           val.lastName.toLowerCase().includes(searchbarInput.toLowerCase()) ||
           val.email.toLowerCase().includes(searchbarInput.toLowerCase()) ||
-          val.phoneNumber.toLowerCase().includes(searchbarInput.toLowerCase())
+          val.phoneNumber.toLowerCase().includes(searchbarInput.toLowerCase()) ||
+          val._id.toLowerCase().includes(searchbarInput.toLowerCase())
         ) {
           return val;
         }

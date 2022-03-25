@@ -1,22 +1,26 @@
-import MaterialIcon from "../../Components/MaterialIcon/MaterialIcon";
 import "./SidebarButton.css";
+import MaterialIcon from "../../Components/MaterialIcon/MaterialIcon";
+import Container from "../../Components/Container";
+
 import { useNavigate } from "react-router";
 const SidebarButton = (props) => {
   const navigate = useNavigate();
-  
+
   const onClickNavigate = () => {
-    navigate(props.href)
-  }
-  
+    navigate(props.href);
+  };
+
   return (
-    <div className="body__sidebar-button" >
+    <Container className="body__sidebar-button">
       <a onClick={onClickNavigate}>
         <li>
-          <MaterialIcon name={props.icon} />
+          <Container className="icon-container">
+            <MaterialIcon name={props.icon} />
+          </Container>
           <span className="sidebar-button__text">{props.name}</span>
         </li>
       </a>
-    </div>
+    </Container>
   );
 };
 

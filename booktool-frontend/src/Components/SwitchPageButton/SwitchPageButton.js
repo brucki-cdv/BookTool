@@ -1,5 +1,6 @@
 import "./SwitchPageButton.css";
 import MaterialIcon from "../MaterialIcon/MaterialIcon";
+
 const SwitchPageButton = (props) => {
   return (
     <div className="switch-page">

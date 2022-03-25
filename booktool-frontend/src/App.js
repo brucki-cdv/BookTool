@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
-import ReservationsList from "./Pages/ReservationsList/ReservationsList";
+import ReservationsListContainer from "./Pages/ReservationsList/ReservationListContainer";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Analytics from "./Pages/Analytics/Analytics";
 import Messages from "./Pages/Messages/Messages";
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/rezerwacje/lista" element={<ReservationsList />} />
+          <Route path="/rezerwacje/lista" element={<ReservationsListContainer />} />
           {/* <Route path="rezerwacje/kalendarz" element={<ReservationsCalendar />}/> */}
           <Route path="/analizy" element={<Analytics />} />
           <Route path="/klienci" element={<Clients />} />

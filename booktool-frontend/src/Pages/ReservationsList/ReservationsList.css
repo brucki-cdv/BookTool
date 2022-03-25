@@ -1,23 +1,7 @@
-.reservations-list {
-}
 
 .reservations-list__wrapper {
-  background-color: white;
-  border-radius: 8px;
   width: 100%;
-  height: 720px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-
-.reservations-list__header {
-  padding: 20px;
-  position: relative;
-}
-
-.reservations-list__header > span {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
+  padding: 0;
 }
 
 .header__tabs {
@@ -36,13 +20,6 @@
   border-bottom: 2px solid purple;
 }
 
-.reservations-list__body-all {
-  padding: 20px;
-}
-
-.reservations-list__body-cancelled {
-  padding: 20px;
-}
 
 .reservations-list__body-all.hidden {
   display: none;
@@ -52,85 +29,3 @@
   display: none;
 }
 
-.reservation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.reservation .reservation__house {
-  display: flex;
-  align-items: center;
-}
-
-.reservation .reservation__house ul {
-  list-style-type: none;
-  font-family: "Poppins", sans-serif;
-}
-
-.reservation .reservation__house .reservation__house__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  border-radius: 20px;
-
-  color: white;
-  text-align: center;
-}
-
-.reservation.niezaplacono .reservation__house .reservation__house__icon {
-  background-color: red;
-}
-
-.reservation.zaplacono .reservation__house .reservation__house__icon {
-  background-color: green;
-}
-
-.reservation.oczekuje .reservation__house .reservation__house__icon {
-  background-color: orange;
-}
-
-.house__title {
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.house__status {
-  font-size: 0.8rem;
-}
-
-.reservation__house ul {
-  margin-left: 20px;
-}
-
-.reservation__information {
-  display: flex;
-  flex-direction: column;
-}
-
-.reservation__information li {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-.reservation__information .reservation__icon {
-  min-width: 50px;
-}
-
-.reservation__information .information__text {
-  margin-left: 20px;
-}
-
-.reservation .reservation__options li {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 30px;
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.5);
-}

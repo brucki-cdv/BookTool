@@ -1,0 +1,19 @@
+.title {
+  margin-bottom: 40px;
+}
+
+.title span {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #54599b;
+}
+
+.title span::before {
+  content: "";
+  top: 50px;
+  position: absolute;
+  border-bottom: 5px solid #54599b;
+  width: 40%;
+}

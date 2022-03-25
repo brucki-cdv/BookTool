@@ -1,53 +1,29 @@
-import "./RecentMessages";
-import MessagesWrapper from "./MessagesWrapper";
+import "./RecentMessages.css";
+import Container from "../Container";
+import Wrapper from "../Wrapper";
 import Message from "./Message";
-import FormTitle from "../FormTitle/FormTitle";
-import { useState, useEffect } from "react";
-import userService from "../../Services/user.service";
+import Title from "../Title";
 
-const RecentMessages = (props) => {
-  const [message, setMessages] = useState([]);
-
-  const checkMessageType = () => {
-    
-    console.log(message.type)
-    switch (message.type) {
-      case "added":
-        return "add";
-      case "cancelled":
-        return "close";
-      case "date":
-        return "schedule";
-    }
-  };
-
-  useEffect(() => {
-    let isApiSubscribed = true;
-    userService.getMessages().then((val) => {
-      if (isApiSubscribed) {
-        setMessages(val.data.messages);
-      }
-    });
-    return () => {
-      isApiSubscribed = false;
-    };
-  }, []);
-
+const renderMessage = (message) => {
   return (
-    <div className="details__messages">
-      <MessagesWrapper>
-        <FormTitle name="Wiadomości" />
-        {message.map((message) => {
-          return (
-            <Message
-              message={message.title}
-              reservationId={message.reservationId}
-              type={message.type}
-            />
-          );
+    <Message
+      title={message.title}
+      reservationId={message.reservationId}
+      type={message.type}
+    />
+  );
+};
+
+const RecentMessages = ({ messages }) => {
+  return (
+    <Container className="details__messages">
+      <Wrapper className="messages__wrapper">
+        <Title name="Wiadomości" />
+        {messages.map((message) => {
+          return renderMessage(message);
         })}
-      </MessagesWrapper>
-    </div>
+      </Wrapper>
+    </Container>
   );
 };
 

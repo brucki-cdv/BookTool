@@ -1,0 +1,19 @@
+.information-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 30px;
+}
+
+
+@media(max-width: 1406px) {
+    .information-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 872px) {
+    .information-cards-container {
+        grid-template-columns: 1fr
+    }
+}

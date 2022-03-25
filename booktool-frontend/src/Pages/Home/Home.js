@@ -3,21 +3,18 @@ import "./Home.css";
 import MainContainer from "../../Components/MainContainer/MainContainer";
 import HomeContent from "./HomeContent";
 import Sidebar from "../../Layout/Sidebar/Sidebar";
-import Modal from "../../Components/Modal/Modal";
+import ModalContainer from "../../Components/Modal";
 import { useSelector } from "react-redux";
 const Home = (props) => {
-  
   const { isOpen, reservationId, clientId } = useSelector(
     (state) => state.modal
   );
 
-  console.log(reservationId)
+  console.log(reservationId);
 
   return (
     <MainContainer>
-      <Modal
-        isOpen={isOpen}
-      />
+      {isOpen && <ModalContainer isOpen={isOpen}/>}
       <Sidebar />
       <HomeContent />
     </MainContainer>

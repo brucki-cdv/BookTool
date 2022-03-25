@@ -1,0 +1,46 @@
+.reservation .reservation__house {
+    display: flex;
+    align-items: center;
+  }
+  
+  .reservation .reservation__house ul {
+    list-style-type: none;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .reservation .reservation__house .reservation__house__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+  
+    color: white;
+    text-align: center;
+  }
+  
+  .reservation.niezaplacono .reservation__house .reservation__house__icon {
+    background-color: red;
+  }
+  
+  .reservation.zaplacono .reservation__house .reservation__house__icon {
+    background-color: green;
+  }
+  
+  .reservation.oczekuje .reservation__house .reservation__house__icon {
+    background-color: orange;
+  }
+  
+  .house__title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .house__status {
+    font-size: 0.8rem;
+  }
+  
+  .reservation__house ul {
+    margin-left: 20px;
+  }

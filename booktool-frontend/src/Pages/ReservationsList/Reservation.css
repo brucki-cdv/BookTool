@@ -1,0 +1,10 @@
+.reservation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+

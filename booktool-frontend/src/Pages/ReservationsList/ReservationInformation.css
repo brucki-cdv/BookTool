@@ -1,0 +1,22 @@
+.reservation__information {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reservation__information li {
+    list-style: none;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .reservation__information li:not(:last-child) {
+      
+  }
+  
+  .reservation__information .reservation__icon {
+    min-width: 50px;
+  }
+  
+  .reservation__information .information__text {
+    margin-left: 20px;
+  }

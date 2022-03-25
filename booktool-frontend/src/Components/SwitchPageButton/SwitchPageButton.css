@@ -1,20 +1,19 @@
-.switch-page ul {
+.switch-page {
   list-style: none;
-  display: flex;
   cursor: pointer;
+  margin-left: 30px;
 }
 
-.switch-page li {
+.switch-page__button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  margin-right: 10px;
+  width: 45px;
+  height: 35px;
 }
 
 .switch-page__button .icon-container {
-    color: grey;
+  color: grey;
 }

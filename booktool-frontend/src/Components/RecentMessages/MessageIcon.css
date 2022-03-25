@@ -1,0 +1,25 @@
+.icon-container {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messages__message.dodano .icon-container {
+  background-color: #12dc26;
+  border-radius: 8px;
+  color: white;
+}
+
+.messages__message.anulowano .icon-container {
+  background-color: #ff4c41;
+  border-radius: 8px;
+  color: white;
+}
+
+.messages__message.termin .icon-container {
+  background-color: #1263dc;
+  border-radius: 8px;
+  color: white;
+}
