@@ -12,7 +12,9 @@ const FilteredReservation = (props) => {
   useEffect(() => {
     userService
       .getAllReservations(1, 10, props.status)
-      .then((val) => setReservations(val.data.reservations));
+      .then((val) => {
+        console.log(val);
+        setReservations(val.data.reservations)});
   }, []);
 
   return reservations
@@ -30,7 +32,7 @@ const FilteredReservation = (props) => {
     .map((val, index) => {
       return (
         <Reservation
-          houseTitle={val.houseNumber}
+          houseTitle={val.apartment.houseNumber}
           status={val.status}
           arrival={val.arrival}
           checkout={val.checkout}
@@ -48,9 +50,9 @@ const CancelledReservations = (props) => {
   const { card } = useSelector((state) => state.reservationList);
   const checkIfHidden = () => {
     if (card == "cancelled") {
-      return "hidden";
-    } else {
       return "";
+    } else {
+      return "hidden";
     }
   };
 

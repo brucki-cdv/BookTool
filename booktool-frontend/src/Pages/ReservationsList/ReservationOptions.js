@@ -11,7 +11,7 @@ const ReservationOptions = (props) => {
         <li
           onClick={() =>
             dispatch({
-              type: "MODAL_OPEN",
+              type: "EDIT_RESERVATION_OPEN",
               payload: {
                 reservationId: props.reservationId,
                 clientId: props.clientId,

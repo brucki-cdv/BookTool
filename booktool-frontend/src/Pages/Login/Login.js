@@ -1,20 +1,25 @@
 import "./Login.css";
 import MainContainer from "../../Components/MainContainer";
-import Wrapper from "../../Components/Wrapper";
+import LoginWrapper from "./LoginWrapper";
 import LoginContainer from "./LoginContainer";
 import WrapperCover from "../../Components/WrapperCover";
-import Container from "../../Components/Container";
-
+import loginSvg from "../../Images/login-svg.svg";
 
 const Login = (props) => {
   return (
     <MainContainer>
-      <Container className="center-div">
-        <Wrapper>
-          <LoginContainer/>
-          <WrapperCover />
-        </Wrapper>
-      </Container>
+      <div className="center-div">
+        <LoginWrapper>
+          <LoginContainer />
+          <WrapperCover>
+            <div className="wrapper-cover__text">
+              Odwiedź naszą stronę i dowiedz się więcej
+              <button className="wrapper-cover__button">BOOKTOOL</button>
+            </div>
+            <img src={loginSvg} alt="book" height="650px" width="550px" />
+          </WrapperCover>
+        </LoginWrapper>
+      </div>
     </MainContainer>
   );
 };

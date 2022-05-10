@@ -1,0 +1,14 @@
+.reservation-list-header__options {
+    display: flex;
+   
+}
+
+.reservation-list-header__options ul {
+    display: flex;
+    align-items: center;
+}
+
+.reservation-list-header__options li{
+    display: inline-block;
+    margin-right: 1rem;
+}

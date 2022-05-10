@@ -1,13 +1,11 @@
 import "./ErrorFormMessage.css";
-import MaterialIcon from "../MaterialIcon/MaterialIcon";
+import { BiErrorCircle } from "react-icons/bi";
 
-const ErrorFormMessage = (props) => {
+export default function ErrorFormMessage(props) {
   return (
     <div className="error-form-message">
-      <MaterialIcon name="error" />
+      <BiErrorCircle size={25} />
       <span className="error-form-message__text">{props.message}</span>
     </div>
   );
-};
-
-export default ErrorFormMessage;
+}

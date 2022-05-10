@@ -1,0 +1,49 @@
+.status-picker ul {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.status-picker ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 0.8rem;
+}
+
+.status-picker ul li:hover {
+  background-color: rgba(0, 0, 0, 0.034);
+  border-radius: 12px;
+}
+
+.picker-waiting__icon,
+.picker-half__icon,
+.picker-paid__icon,
+.picker-cancelled__icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.picker-waiting .picker-waiting__icon {
+  background-color: rgb(144, 31, 209);
+}
+
+.picker-half .picker-half__icon {
+  background-color: rgb(255, 145, 0);
+}
+
+.picker-paid .picker-paid__icon {
+  background-color: green;
+}
+
+.picker-cancelled .picker-cancelled__icon {
+  background-color: red;
+}

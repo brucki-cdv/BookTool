@@ -1,5 +1,6 @@
 .reservations-list__header {
-    position: relative;
-    padding: 20px;
-  }
-  
+  display: flex;
+  position: relative;
+  padding: 20px;
+  justify-content: space-between;
+}

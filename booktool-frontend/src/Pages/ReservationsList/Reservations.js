@@ -28,9 +28,10 @@ const FilteredReservation = (props) => {
       }
     })
     .map((val, index) => {
+      console.log(val);
       return (
         <Reservation
-          houseTitle={val.houseNumber}
+          houseTitle={val.apartment.houseNumber}
           status={val.status}
           arrival={val.arrival}
           checkout={val.checkout}

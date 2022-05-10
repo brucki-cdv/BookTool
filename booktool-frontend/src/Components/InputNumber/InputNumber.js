@@ -1,6 +1,6 @@
 import "./InputNumber.css";
 
-const InputNumber = (props) => {
+export default function InputNumber(props) {
   return (
     <div className="input-number">
       <label for={props.id}>{props.label}</label>
@@ -13,6 +13,4 @@ const InputNumber = (props) => {
       />
     </div>
   );
-};
-
-export default InputNumber;
+}

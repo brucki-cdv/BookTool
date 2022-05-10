@@ -1,0 +1,8 @@
+.square-card__icon {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  gap: .2rem;
+}

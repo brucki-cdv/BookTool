@@ -1,17 +1,34 @@
 .wrapper-cover {
-    width: 50%;
-    overflow: hidden;
-    border-radius: 0 8px 8px 0;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 0 8px 8px 0;
+  background-color: #eaeffb;
+}
+
+.wrapper-cover__text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  width: 170px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+button.wrapper-cover__button {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  padding: .3rem;
+  width: 120px;
+  border: 1px solid black;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
 .wrapper-cover__background {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background-image: url('../../Images/cover.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-
-

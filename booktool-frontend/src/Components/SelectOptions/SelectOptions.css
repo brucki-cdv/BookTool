@@ -1,19 +1,19 @@
 .select-options {
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-}
-
-.select-options select {
-  height: 35px;
-  width: 50px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.select-options select:focus {
-    border: 1px solid rgb(109, 113, 249)
-}
-
-.select-options label {
-    margin-right: 10px;
-}
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+  }
+  
+  .select-options select {
+    height: 35px;
+    width: 50px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .select-options select:focus {
+      border: 1px solid rgb(109, 113, 249)
+  }
+  
+  .select-options label {
+      margin-right: 10px;
+  }

@@ -1,0 +1,19 @@
+.square-card__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 6%;
+  right: 2%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.square-card__option:hover {
+  background-color: rgba(128, 128, 128, 0.322);
+  transition: all 0.2s ease-in-out;
+}

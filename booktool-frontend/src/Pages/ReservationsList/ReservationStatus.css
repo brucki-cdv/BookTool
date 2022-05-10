@@ -20,15 +20,15 @@
     text-align: center;
   }
   
-  .reservation.niezaplacono .reservation__house .reservation__house__icon {
+  .reservation.cancelled .reservation__house .reservation__house__icon {
     background-color: red;
   }
   
-  .reservation.zaplacono .reservation__house .reservation__house__icon {
+  .reservation.paid .reservation__house .reservation__house__icon {
     background-color: green;
   }
   
-  .reservation.oczekuje .reservation__house .reservation__house__icon {
+  .reservation.waiting .reservation__house .reservation__house__icon {
     background-color: orange;
   }
   

@@ -1,0 +1,22 @@
+.modal-control__item {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-control__item:hover {
+  background-color: var(--button-color-hover);
+  border-radius: 20px;
+}
+
+.modal-control__item--disabled {
+  cursor: not-allowed;
+  color: grey;
+}
+
+.modal-control__item--disabled:hover {
+  background-color: white;
+}

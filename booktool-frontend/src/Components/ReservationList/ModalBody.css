@@ -1,0 +1,59 @@
+.modal-body {
+  padding: 20px;
+}
+
+.body__reservation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.body__reservation.hidden {
+  display: none;
+}
+
+
+.body__reservation .input-number {
+  margin-top: 30px;
+}
+
+.body__reservation .reservation__right {
+  margin-left: 50px;
+  width: 300px;
+}
+
+.body__reservation .reservation__date-picker {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  justify-content: space-between;
+}
+
+.body__reservation .reservation__date-picker .input-date {
+  float: left;
+}
+
+.reservation__date-picker .date-picker__inputs {
+  display: flex;
+}
+
+.reservation__date-picker .date-picker__inputs .input-date {
+  margin-right: 20px;
+}
+
+.reservation__price {
+  grid-column: 2;
+}
+
+
+/* ---------------------------------------------------------------- */
+
+.body__client {
+  width: 300px;
+}
+
+.body__client.hidden {
+  display: none;
+}
+
+

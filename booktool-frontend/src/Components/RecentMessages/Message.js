@@ -1,9 +1,8 @@
 import "./Message.css";
-import Container from "../Container";
 import MessageIcon from "./MessageIcon";
 import MessageContent from "./MessageContent";
 
-const Message = ({ type, title, reservationId }) => {
+export default function Message({ type, title, reservationId }) {
   const getStatusClass = () => {
     switch (type) {
       case "added":
@@ -16,13 +15,11 @@ const Message = ({ type, title, reservationId }) => {
   };
 
   return (
-    <Container className={"messages__message " + getStatusClass()}>
+    <div className={"messages__message " + getStatusClass()}>
       <li>
-        <MessageIcon type={type} />
+        <MessageIcon icon={type} />
         <MessageContent title={title} reservationId={reservationId} />
       </li>
-    </Container>
+    </div>
   );
-};
-
-export default Message;
+}

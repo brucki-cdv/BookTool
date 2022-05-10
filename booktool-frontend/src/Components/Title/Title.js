@@ -1,11 +1,10 @@
 import "./Title.css";
-import Container from "../Container";
 
 const Title = ({ name }) => {
   return (
-    <Container className="title">
+    <div className="title">
       <span>{name}</span>
-    </Container>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import "./InputDate.css";
 
-const InputDate = (props) => {
+export default function InputDate(props) {
   return (
     <div className="input-date">
       <label for={props.id}>{props.label}</label>
@@ -14,6 +14,4 @@ const InputDate = (props) => {
       />
     </div>
   );
-};
-
-export default InputDate;
+}

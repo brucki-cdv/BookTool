@@ -1,0 +1,10 @@
+.square-card__details {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    position: absolute;
+    bottom: 18%;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+}

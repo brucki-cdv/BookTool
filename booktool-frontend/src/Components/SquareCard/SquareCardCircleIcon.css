@@ -1,0 +1,14 @@
+.square-card__circle-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2.5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+
+}

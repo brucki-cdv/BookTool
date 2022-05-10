@@ -1,0 +1,24 @@
+.modal-reservation__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.modal-reservation__container.hidden {
+  display: none; 
+}
+
+.left-panel__row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+.container__left-panel {
+  grid-column: 1;
+}
+
+.container__right-panel {
+  grid-column: 2;
+}

@@ -4,12 +4,12 @@ import userService from "../../Services/user.service";
 
 export const TableContext = createContext({});
 
-const RecentClientsTableContainer = (props) => {
+export default function RecentClientsTableContainer(props) {
   const [searchbarInput, setSearchBarInput] = useState("");
   const [selectInput, setSelectInput] = useState(10);
   const [clients, setClients] = useState([]);
   const [page, setPage] = useState(1);
-  
+
   useEffect(() => {
     userService
       .getAllClients(page, selectInput)
@@ -44,7 +44,6 @@ const RecentClientsTableContainer = (props) => {
     }
   };
 
-
   const contextValue = {
     searchbarInput,
     selectInput,
@@ -53,13 +52,11 @@ const RecentClientsTableContainer = (props) => {
     onChangeSelectInput,
     decreasePage,
     increasePage,
-  }
+  };
 
   return (
     <TableContext.Provider value={contextValue}>
       <RecentClientTable />
     </TableContext.Provider>
   );
-};
-
-export default RecentClientsTableContainer;
+}

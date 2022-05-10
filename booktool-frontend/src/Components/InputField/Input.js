@@ -1,8 +1,8 @@
 import "./Input.css";
-import Container from "../Container";
-const Input = (props) => {
+
+export default function Input(props) {
   return (
-    <Container>
+    <div>
       <input
         type={props.type}
         id={props.id}
@@ -10,8 +10,6 @@ const Input = (props) => {
         onChange={props.onChange}
         value={props.value}
       />
-    </Container>
+    </div>
   );
-};
-
-export default Input;
+}

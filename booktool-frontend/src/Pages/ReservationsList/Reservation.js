@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const Reservation = (props) => {
   return (
-    <div className={`reservation`} key={props.index}>
+    <div className={`reservation ${props.status}` } key={props.index}>
       <ReservationStatus houseTitle={props.houseTitle} status={props.status} />
       <ReservationInformation
         arrival={props.arrival}

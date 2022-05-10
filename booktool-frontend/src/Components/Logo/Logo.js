@@ -1,6 +1,6 @@
 import "./Logo.css";
 
-const Logo = (props) => {
+export default function Logo(props) {
   return (
     <div className="logo-container">
       <div className="logo__graphic">
@@ -9,6 +9,4 @@ const Logo = (props) => {
       <span className="header__brand-name">BookTools</span>
     </div>
   );
-};
-
-export default Logo;
+}

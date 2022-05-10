@@ -1,11 +1,9 @@
 import "./MutedLink.css";
 
-const MutedLink = (props) => {
+export default function MutedLink(props) {
   return (
     <div className="muted-link">
-      <a href={props.href}>{props.text}</a>
+      <a href={props.href}>{props.children}</a>
     </div>
   );
-};
-
-export default MutedLink;
+}

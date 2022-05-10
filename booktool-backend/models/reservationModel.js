@@ -9,15 +9,15 @@ const reservationSchema = mongoose.Schema({
         type: Date,
         require: true,
     },
-    houseNumber: {
-        type: Number,
+    apartment: {
+        type: mongoose.SchemaTypes.ObjectId,
         require: true,
-        min: 1,
-        max: 20
+        ref: 'Apartment',
     },
     client: {
         type: mongoose.SchemaTypes.ObjectId,
-        require: true
+        require: true,
+        ref: 'Client',
     },
     adults: {
         type: Number,

@@ -1,35 +1,41 @@
 import InformationCard from "../InformationCard";
-import Container from "../Container";
 
-const InformationCards = ({informations}) => {
+import { InformationCardsContext } from "./InformationCardsContainer";
+
+import { useContext } from "react";
+import { RiCalendarEventLine } from "react-icons/ri";
+import { BsCalendar3 } from "react-icons/bs";
+import { AiOutlineClose, AiOutlineMail } from "react-icons/ai";
+
+export default function InformationCards() {
+  const { summary } = useContext(InformationCardsContext);
+
   return (
-    <Container className="information-cards-container">
+    <div className="information-cards-container">
       <InformationCard
         title="Dzisiejsze rezerwacje"
-        value={informations.todayReservation}
-        icon="event"
+        value={summary.todayReservation}
+        icon={<RiCalendarEventLine size={30} />}
         bgColor="#12DC26"
       />
       <InformationCard
         title="Wszystkie rezerwacje"
-        value={informations.allReservation}
-        icon="calendar_month"
+        value={summary.allReservation}
+        icon={<BsCalendar3 size={30} />}
         bgColor="#6D71F9"
       />
       <InformationCard
         title="Anulowane rezerwacje"
-        value={informations.cancelledReservation}
-        icon="close"
+        value={summary.cancelledReservation}
+        icon={<AiOutlineClose size={30} />}
         bgColor="#FF4C41"
       />
       <InformationCard
         title="Ilość wiadomości"
-        value={informations.messages}
-        icon="mail"
+        value={summary.messages}
+        icon={<AiOutlineMail size={30} />}
         bgColor="#1263DC"
       />
-    </Container>
+    </div>
   );
-};
-
-export default InformationCards;
+}

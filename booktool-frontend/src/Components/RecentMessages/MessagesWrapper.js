@@ -1,11 +1,9 @@
 import "./MessagesWrapper.css";
 
-const MessagesWrapper = (props) => {
+export default function MessagesWrapper(props) {
   return (
-    <div className="messages__wrapper">
+    <div className="wrapper messages__wrapper">
       <ul>{props.children}</ul>
     </div>
   );
-};
-
-export default MessagesWrapper;
+}

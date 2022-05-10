@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../Actions/auth";
+import useAuth from "../../Hooks/useAuth";
 import LoginContent from "./LoginContent";
 
 const LoginContainer = (props) => {
@@ -13,10 +13,7 @@ const LoginContainer = (props) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const hello = () => {
-    console.log("hello");
-  };
+  const { loginUser } = useAuth();
 
   const onChangeEmail = (e) => {
     const email = e.target.value;
@@ -74,21 +71,15 @@ const LoginContainer = (props) => {
     setLoading(true);
     formValidation();
     if (formIsValid) {
-      dispatch(login(email, password)).then((e) => console.log(e));
+      loginUser(email, password);
     }
   };
-
-  if (isLoggedIn) {
-    navigate("/dashboard");
-    console.log("navigate!");
-  }
 
   const loginContext = useMemo(() => ({
     onChangeEmail,
     onChangePassword,
     formValidation,
     formHandler,
-    hello,
     error,
     formIsValid,
   }));

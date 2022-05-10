@@ -1,6 +1,6 @@
 .information-card__icon {
   height: 65px;
-  min-width: 65px;
+  width: 65px;
   border-radius: 8px;
   background-color: purple;
   display: flex;

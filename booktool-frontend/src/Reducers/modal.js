@@ -7,35 +7,61 @@ import {
   MODAL_SAVE_DATA,
   MODAL_DELETE_DATA,
   MODAL_FIRST_LOAD,
-  MODAL_SECOND_LOAD
+  MODAL_SECOND_LOAD,
+  ADD_RESERVATION_OPEN,
+  EDIT_RESERVATION_OPEN,
+  ADD_APARTMENT_OPEN,
+  EDIT_APARTMENT_OPEN,
 } from "../Constants/modalConstant";
 
 const initialState = {
-  isOpen: false,
+  isAddReservationOpen: false,
+  isEditReservationOpen: false,
+  isAddApartmentOpen: false,
+  isEditApartmentOpen: false,
   reservationId: null,
+  reloadPage: false,
   clientId: null,
+  apartmentId: null,
   card: "reservation",
   clickedSave: null,
   clickedDelete: null,
   clickedEdit: null,
-  test: 0
 };
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case MODAL_OPEN:
+    case ADD_RESERVATION_OPEN:
       return {
-        isOpen: true,
+        isAddReservationOpen: true,
+      };
+    case EDIT_RESERVATION_OPEN:
+      return {
+        reloadPage: false,
+        isEditReservationOpen: true,
         reservationId: payload.reservationId,
         clientId: payload.clientId,
       };
+    case ADD_APARTMENT_OPEN:
+      return {
+        isAddApartmentOpen: true,
+      };
+    case EDIT_APARTMENT_OPEN:
+      return {
+        isEditApartmentOpen: true,
+        apartmentId: payload,
+      };
     case MODAL_CLOSE:
       return {
-        isOpen: false,
+        isAddApartmentOpen: false,
+        isEditApartmentOpen: false,
+        isAddReservationOpen: false,
+        isEditReservationOpen: false,
         reservationId: null,
         clientId: null,
+        reloadPage: true,
       };
 
     case MODAL_OPEN_RESERVATION:
@@ -54,7 +80,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         clickedSave: true,
-        isOpen: false
+        isOpen: false,
       };
 
     case MODAL_EDIT_DATA:
@@ -67,7 +93,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         clickedDelete: true,
-        isOpen: false
+        isOpen: false,
       };
 
     case MODAL_FIRST_LOAD:

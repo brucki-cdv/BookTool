@@ -7,7 +7,6 @@ const SidebarHeader = (props) => {
         <div className="sidebar__header">
             <SidebarToggle />
             <Logo />
-            <SearchBar placeholder="Szukaj..."/>
         </div>
     )
 }

@@ -1,0 +1,13 @@
+.modal-tab {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  list-style-type: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal-tab.clicked {
+  color: blue;
+  border-bottom: 2px solid blue;
+}

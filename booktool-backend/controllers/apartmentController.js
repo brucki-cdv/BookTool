@@ -32,7 +32,7 @@ exports.createApartment = async (req, res, next) => {
 
 exports.getApartment = async (req, res, next) => {
   try {
-    const apartment = await Apartment.findOne({ houseNumber: req.params.id });
+    const apartment = await Apartment.findOne({ _id: req.params.id });
     if (!apartment) {
       return next(new AppError("Can not find that apartment", 400));
     }
@@ -65,7 +65,7 @@ exports.getApartments = async (req, res, next) => {
 exports.updateApartment = async (req, res, next) => {
   try {
     const apartment = await Apartment.findOneAndUpdate(
-      { houseNumber: req.params.id },
+      { _id: req.params.id },
       req.body
     );
 

@@ -1,0 +1,11 @@
+.modal-client__container {
+  width: 50%;
+}
+
+.modal-client__container.hidden {
+  display: none;
+}
+
+.modal-client__container input {
+  margin-bottom: 1rem;
+}

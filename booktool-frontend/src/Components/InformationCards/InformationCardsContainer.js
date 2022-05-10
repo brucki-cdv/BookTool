@@ -2,9 +2,11 @@ import "./InformationCardsContainer.css";
 import InformationCards from "./InformationCards";
 import userService from "../../Services/user.service";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 
-const InformationCardsContainer = (props) => {
+export const InformationCardsContext = createContext({});
+
+export default function InformationCardsContainer(props) {
   const [summary, setSummary] = useState({});
   const [fetchInformation, setFetchInformation] = useState({
     loading: true,
@@ -33,7 +35,13 @@ const InformationCardsContainer = (props) => {
     return "";
   }
 
-  return <InformationCards informations={summary} />;
-};
+  const initValue = {
+    summary,
+  };
 
-export default InformationCardsContainer;
+  return (
+    <InformationCardsContext.Provider value={initValue}>
+      <InformationCards />
+    </InformationCardsContext.Provider>
+  );
+}

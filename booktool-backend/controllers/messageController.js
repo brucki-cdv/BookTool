@@ -2,7 +2,7 @@ const Message = require("../models/messageModel");
 
 exports.getMessages = async (req, res, next) => {
   try {
-    const messages = await Message.find().limit(20).sort({createdAt: "desc"});
+    const messages = await Message.find().limit(6).sort({createdAt: "desc"});
     res.status(200).json({
       status: "success",
       messages,

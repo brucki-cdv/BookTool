@@ -1,6 +1,6 @@
 import "./RecentMessages.css";
-import Container from "../Container";
-import Wrapper from "../Wrapper";
+
+import RecentMessagesWrapper from "./RecentMessagesWrapper";
 import Message from "./Message";
 import Title from "../Title";
 
@@ -16,14 +16,14 @@ const renderMessage = (message) => {
 
 const RecentMessages = ({ messages }) => {
   return (
-    <Container className="details__messages">
-      <Wrapper className="messages__wrapper">
+    <div className="details__messages">
+      <RecentMessagesWrapper className="messages__wrapper">
         <Title name="Wiadomości" />
         {messages.map((message) => {
           return renderMessage(message);
         })}
-      </Wrapper>
-    </Container>
+      </RecentMessagesWrapper>
+    </div>
   );
 };
 

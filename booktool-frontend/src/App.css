@@ -1,3 +1,7 @@
+:root {
+  --opacity-dark-color: rgba(0, 0, 0, 0.15);
+}
+
 .App {
   text-align: center;
 }

@@ -35,6 +35,10 @@ const ReservationListContainer = () => {
     setActiveTab({ cancelled: "active", all: null });
   };
 
+  const onAddReservationClick = () => {
+    dispatch({type: "ADD_RESERVATION_OPEN"})
+  }
+
   const transformStatus = () => {
     switch (props.status) {
       case "paid":
@@ -62,6 +66,7 @@ const ReservationListContainer = () => {
    onChangeSearchbarInput,
    activeTab,
    onAllClick,
+   onAddReservationClick,
    onCancelledClick,
    transformStatus
 

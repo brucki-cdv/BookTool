@@ -1,11 +1,7 @@
 import "./WrapperCover.css";
 
-const WrapperCover = (props) => {
-  return (
-    <div className="wrapper-cover">
-      <div className="wrapper-cover__background"></div>
-    </div>
-  );
+const WrapperCover = ({ children }) => {
+  return <div className="wrapper-cover">{children}</div>;
 };
 
 export default WrapperCover;

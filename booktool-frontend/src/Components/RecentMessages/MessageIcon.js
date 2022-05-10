@@ -1,24 +1,20 @@
-import Container from "../Container";
-import MaterialIcon from "../MaterialIcon";
 import "./MessageIcon.css";
-const MessageIcon = (props) => {
 
+import { IoAddOutline } from "react-icons/io5";
+import { AiOutlineClose } from "react-icons/ai";
+import { MdOutlineSchedule } from "react-icons/md";
+
+export default function MessageIcon(props) {
   const getStatusIcon = () => {
     switch (props.type) {
       case "added":
-        return "add";
+        return <IoAddOutline size={30} />;
       case "cancelled":
-        return "close";
+        return <AiOutlineClose size={30} />;
       case "date":
-        return "schedule";
+        return <MdOutlineSchedule size={30} />;
     }
   };
 
-  return (
-    <Container className="icon-container">
-      <MaterialIcon name={getStatusIcon()} />
-    </Container>
-  );
-};
-
-export default MessageIcon;
+  return <div className="icon-container">{getStatusIcon()}</div>;
+}

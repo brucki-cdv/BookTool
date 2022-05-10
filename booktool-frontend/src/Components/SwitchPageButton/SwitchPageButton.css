@@ -4,6 +4,12 @@
   margin-left: 30px;
 }
 
+.switch-page li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
 .switch-page__button {
   display: flex;
   justify-content: center;
