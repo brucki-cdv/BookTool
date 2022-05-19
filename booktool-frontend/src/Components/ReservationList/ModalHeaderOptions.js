@@ -1,10 +1,8 @@
 import MaterialIcon from "../MaterialIcon";
 
-
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-const ModalHeaderOptions = (props) => {
+export default function ModalHeaderOptions(props) {
   const dispatch = useDispatch();
 
   const onDeleteClick = () => {
@@ -47,6 +45,4 @@ const ModalHeaderOptions = (props) => {
       </ul>
     </div>
   );
-};
-
-export default ModalHeaderOptions;
+}

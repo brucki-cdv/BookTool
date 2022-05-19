@@ -1,9 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useDispatch } from "react-redux";
 
-import ModalContext from "./ModalContainer";
-
-const ModalHeaderTabs = (props) => {
+export default function ModalHeaderTabs(props) {
   const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState({
     reservation: "active",
@@ -36,6 +34,4 @@ const ModalHeaderTabs = (props) => {
       </ul>
     </div>
   );
-};
-
-export default ModalHeaderTabs;
+}

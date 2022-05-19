@@ -10,7 +10,6 @@ exports.createReservation = async (req, res, next) => {
       arrival,
       checkout,
       apartment,
-      client,
       adults,
       children,
       amount,
@@ -24,7 +23,6 @@ exports.createReservation = async (req, res, next) => {
       !arrival ||
       !checkout ||
       !apartment ||
-      !client ||
       !adults ||
       !amount ||
       !status ||
@@ -35,11 +33,28 @@ exports.createReservation = async (req, res, next) => {
     ) {
       return next(new AppError("Please provide all information", 400));
     }
+
+    let client;
+
+    client = await Client.findOne({
+      $or: [{ email: email }, { phoneNumber: phoneNumber }],
+    });
+    if (!client) {
+      client = await Client.create({
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        email: email,
+      });
+    }
+
+    console.log(client);
+
     const newReservation = await Reservation.create({
       arrival: new Date(arrival),
       checkout: new Date(checkout),
       apartment: apartment,
-      client: client,
+      client: client._id,
       adults: adults,
       children: children,
       amount: amount,
@@ -55,13 +70,6 @@ exports.createReservation = async (req, res, next) => {
       title: "Dodano nową rezerwację",
       reservationId: newReservation._id,
       type: "added",
-    });
-
-    const newClient = await Client.create({
-      firstName: firstName,
-      lastName: lastName,
-      phoneNumber: phoneNumber,
-      email: email,
     });
   } catch (error) {
     console.log(error.message);
@@ -221,8 +229,6 @@ exports.getReservations = async (req, res, next) => {
 
 exports.getReservationSummary = async (req, res, next) => {
   try {
-    
-
     let currentDate = moment().utcOffset(0);
     currentDate.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
     currentDate.toISOString();

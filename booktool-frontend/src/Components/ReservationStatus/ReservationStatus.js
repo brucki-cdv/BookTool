@@ -1,8 +1,8 @@
 import "./ReservationStatus.css";
 import MaterialIcon from "../MaterialIcon/MaterialIcon";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const ReservationStatus = (props) => {
+export default function ReservationStatus(props) {
   const [statusPicker, setStatusPicker] = useState("");
 
   const setCancelled = () => setStatusPicker("cancelled");
@@ -37,6 +37,4 @@ const ReservationStatus = (props) => {
       </div>
     </div>
   );
-};
-
-export default ReservationStatus;
+}

@@ -9,7 +9,7 @@ import { ModalContext } from "./ModalContainer";
 
 import { useContext } from "react";
 
-const ReservationInformation = (props) => {
+export default function ReservationInformation(props) {
   const {
     reservation,
     options,
@@ -21,7 +21,6 @@ const ReservationInformation = (props) => {
     onChangePriceInput,
     checkIfHidden,
   } = useContext(ModalContext);
-
 
   console.log(reservation);
 
@@ -84,6 +83,4 @@ const ReservationInformation = (props) => {
       </div>
     </div>
   );
-};
-
-export default ReservationInformation;
+}

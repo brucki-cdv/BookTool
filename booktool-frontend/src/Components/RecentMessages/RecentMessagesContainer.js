@@ -3,25 +3,25 @@ import { useState, useEffect } from "react";
 import userService from "../../Services/user.service";
 import RecentMessages from "./RecentMessages";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const RecentMessagesContainer = (props) => {
   const [messages, setMessages] = useState([]);
-
-  const checkMessageType = () => {
-    console.log(message.type);
-    switch (message.type) {
-      case "added":
-        return "add";
-      case "cancelled":
-        return "close";
-      case "date":
-        return "schedule";
-    }
-  };
 
   useEffect(() => {
     let isApiSubscribed = true;
     userService.getMessages().then((val) => {
       if (isApiSubscribed) {
+        toast("Hello zelo!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         setMessages(val.data.messages);
       }
     });
@@ -30,7 +30,22 @@ const RecentMessagesContainer = (props) => {
     };
   }, []);
 
-  return <RecentMessages messages={messages} />;
+  return (
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <RecentMessages messages={messages} />
+    </>
+  );
 };
 
 export default RecentMessagesContainer;

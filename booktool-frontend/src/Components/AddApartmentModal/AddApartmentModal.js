@@ -7,12 +7,10 @@ import ModalControlItem from "../Modal/ModalControlItem";
 import ModalTitle from "../Modal/ModalTitle";
 import ModalBody from "../Modal/ModalBody";
 import InputField from "../InputField";
-import { AddApartmentContext } from "./AddApartmentModalContainer";
 
 import { AiOutlineClose, AiOutlineEdit } from "react-icons/ai";
-import { useContext } from "react";
 
-export default function AddApartmentModal(second) {
+export default function AddApartmentModal({ context }) {
   const {
     onNameChange,
     onMaxSlotsChange,
@@ -22,7 +20,7 @@ export default function AddApartmentModal(second) {
     onApartmentCreate,
     onCloseClick,
     isValid,
-  } = useContext(AddApartmentContext);
+  } = context;
   return (
     <ModalBackdrop>
       <ModalContainer style={{ width: "520px" }}>

@@ -65,9 +65,5 @@ export default function AddApartmentContainer(second) {
     isValid,
   };
 
-  return (
-    <AddApartmentContext.Provider value={initValue}>
-      <AddApartmentModal />
-    </AddApartmentContext.Provider>
-  );
+  return <AddApartmentModal context={initValue} />;
 }

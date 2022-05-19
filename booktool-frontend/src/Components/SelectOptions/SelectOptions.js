@@ -1,8 +1,7 @@
 import "./SelectOptions.css";
 import classnames from "classnames";
 
-const SelectOptions = ({options, ...props}) => {
-
+export default function SelectOptions({ options, ...props }) {
   return (
     <div className={classnames(props.className, "select-options")}>
       <label for={props.id}>{props.label}</label>
@@ -18,6 +17,4 @@ const SelectOptions = ({options, ...props}) => {
       </select>
     </div>
   );
-};
-
-export default SelectOptions;
+}

@@ -4,7 +4,7 @@ import Wrapper from "../Wrapper";
 import ModalBody from "./ModalBody";
 import ModalHeader from "./ModalHeader";
 
-const Modal = (props) => {
+export default function Modal(props) {
   return (
     <ModalBackdrop>
       <Wrapper className="modal-wrapper">
@@ -13,6 +13,4 @@ const Modal = (props) => {
       </Wrapper>
     </ModalBackdrop>
   );
-};
-
-export default Modal;
+}

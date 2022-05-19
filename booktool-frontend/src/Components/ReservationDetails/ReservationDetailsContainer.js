@@ -30,9 +30,10 @@ export default function ReservationDetailsContainer(second) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(reservationId);
+    
     userService.getReservation(reservationId).then((val) => {
-      console.log(val);
+      console.log("RESERVATION");
+      console.log(val.data);
       setArrival(
         moment(new Date(val.data.reservation.arrival)).format("YYYY-MM-DD")
       );

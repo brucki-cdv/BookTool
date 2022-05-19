@@ -1,6 +1,6 @@
 import "./ReservationListHeaderOptions.css";
 import SelectOptions from "../../Components/SelectOptions";
-import SearchBar from "../../Components/SearchBar";
+import SearchBar from "../../Components/Searchbar";
 import CreateButton from "../../Components/CreateButton";
 
 import { useContext } from "react";

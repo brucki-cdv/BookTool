@@ -1,7 +1,6 @@
 import AddReservationModal from "./AddReservationModal";
 import userService from "../../Services/user.service";
 
-import ReactDOM from "react-dom";
 import { useState, useEffect, createContext } from "react";
 import { useDispatch } from "react-redux";
 
@@ -36,22 +35,24 @@ export default function AddReservationModalContainer(second) {
   const onEmailChange = (e) => setEmail(e.target.value);
 
   const onReservationCreate = () => {
-    userService.createReservation({
-      client: "63e6ed9eeaede830cba92a47",
-      arrival: arrival,
-      checkout: checkout,
-      status: status,
-      adults: adultNumber,
-      children: childrenNumber,
-      amount: price,
-      apartment: apartmentId,
-      firstName: firstName,
-      lastName: lastName,
-      phoneNumber: phoneNumber,
-      email: email,
-    });
+    userService
+      .createReservation({
+        arrival: arrival,
+        checkout: checkout,
+        status: status,
+        adults: adultNumber,
+        children: childrenNumber,
+        amount: price,
+        apartment: apartmentId,
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        email: email,
+      })
+      
+      
 
-    dispatch({type: "MODAL_CLOSE"});
+    dispatch({ type: "MODAL_CLOSE" });
   };
 
   useEffect(() => {
@@ -117,7 +118,7 @@ export default function AddReservationModalContainer(second) {
     onEmailChange,
     onReservationCreate,
     isValid,
-    apartmentsOption
+    apartmentsOption,
   };
   return (
     <AddReservationContext.Provider value={initValue}>

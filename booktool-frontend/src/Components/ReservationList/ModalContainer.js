@@ -7,7 +7,7 @@ import dateConverter from "../../Helpers/dateConverter";
 
 export const ModalContext = createContext({});
 
-const ModalContainer = (props) => {
+export default function ModalContainer(props) {
   const { reservationId, card, clientId, clickedSave, clickedDelete } =
     useSelector((state) => state.modal);
 
@@ -15,7 +15,7 @@ const ModalContainer = (props) => {
   const [reservation, setReservation] = useState({});
   const [apartment, setApartment] = useState({});
   const [client, setClient] = useState({});
-  const options = ["Data dodani", "Sortowanie malejąco"];
+  const options = ["Data dodania", "Sortowanie malejąco"];
 
   const checkIfHidden = () => {
     if (card == "client") {
@@ -179,6 +179,4 @@ const ModalContainer = (props) => {
         )}
     </React.Fragment>
   );
-};
-
-export default ModalContainer;
+}

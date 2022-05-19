@@ -1,6 +1,6 @@
 import style from "./SelectListItem.module.css";
 
-const SelectListItem = (props) => {
+export default function SelectListItem(props) {
   function add3Dots(string, limit) {
     var dots = "...";
     if (string.length > limit) {
@@ -16,6 +16,4 @@ const SelectListItem = (props) => {
       <span>{props.children}</span>
     </li>
   );
-};
-
-export default SelectListItem;
+}

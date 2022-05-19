@@ -7,11 +7,15 @@ import SelectListItem from "./SelectListItem";
 import SelectLabel from "./SelectLabel";
 
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { AiOutlineDollarCircle } from "react-icons/ai";
 import { IoChevronUpOutline, IoChevronDownOutline } from "react-icons/io5";
 
-const SelectItem = ({ options, defaultValue, label, onChange, icon }) => {
+export default function SelectItem({
+  options,
+  defaultValue,
+  label,
+  onChange,
+  icon,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
     value: defaultValue,
@@ -20,8 +24,6 @@ const SelectItem = ({ options, defaultValue, label, onChange, icon }) => {
   const toggling = () => setIsOpen(!isOpen);
 
   const onOptionClicked = (value, name) => () => {
-    console.log("VALUE = ", value);
-    console.log("NAME = ", name);
 
     onChange(value);
     setSelectedOption({ value: value, name: name });
@@ -63,6 +65,4 @@ const SelectItem = ({ options, defaultValue, label, onChange, icon }) => {
       )}
     </SelectContainer>
   );
-};
-
-export default SelectItem;
+}

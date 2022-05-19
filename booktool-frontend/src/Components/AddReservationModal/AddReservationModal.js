@@ -16,7 +16,7 @@ import { useDispatch } from "react-redux";
 import { useState, useContext } from "react";
 import { AiOutlineClose, AiOutlineEdit } from "react-icons/ai";
 
-export default function AddReservationModal(second) {
+export default function AddReservationModal(props) {
   const [tab, setTab] = useState("reservation");
   const dispatch = useDispatch();
   const { isValid, onReservationCreate } = useContext(AddReservationContext);

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const ModalHeaderTitle = (props) => {
+export default function ModalHeaderTitle(props) {
   const { reservationId, clientId } = useSelector((state) => state.modal);
 
   return (
@@ -9,6 +9,4 @@ const ModalHeaderTitle = (props) => {
       <span>{reservationId}</span>
     </div>
   );
-};
-
-export default ModalHeaderTitle;
+}

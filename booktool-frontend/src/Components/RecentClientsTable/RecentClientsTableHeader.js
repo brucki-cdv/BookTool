@@ -1,5 +1,5 @@
 import "./RecentClientsTableHeader.css";
-import SearchBar from "../SearchBar";
+import Searchbar from "../Searchbar";
 import SelectOptions from "../SelectOptions";
 import SwitchPageButton from "../SwitchPageButton";
 import CreateButton from "../CreateButton";
@@ -14,7 +14,7 @@ export default function RecentClientsTableHeader(props) {
   return (
     <div className="wrapper__header">
       <div className="searchbar-container">
-        <SearchBar
+        <Searchbar
           lightMode={true}
           onChange={context.onChangeSearchbar}
           placeholder="Szukaj..."

@@ -2,9 +2,10 @@ import "./ClientInformation.css";
 import ChapterTitle from "../ChapterTitle";
 import InputField from "../InputField";
 
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import { ModalContext } from "./ModalContainer";
-const ClientInformation = (props) => {
+
+export default function ClientInformation(props) {
   const { client, setClientInformationHidden } = useContext(ModalContext);
 
   return (
@@ -20,6 +21,4 @@ const ClientInformation = (props) => {
       <InputField name="test" label="Email" value={client.email} />
     </div>
   );
-};
-
-export default ClientInformation;
+}

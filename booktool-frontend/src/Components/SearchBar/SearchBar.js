@@ -1,7 +1,7 @@
-import "./SearchBar.css";
+import "./Searchbar.css";
 import MaterialIcon from "../MaterialIcon/MaterialIcon";
 
-const SearchBar = (props) => {
+export default function Searchbar(props) {
   const style = props.lightMode
     ? "header__search-bar light"
     : "header__search-bar";
@@ -20,6 +20,4 @@ const SearchBar = (props) => {
       </li>
     </div>
   );
-};
-
-export default SearchBar;
+}
