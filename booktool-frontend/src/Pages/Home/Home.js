@@ -25,7 +25,6 @@ const Home = (props) => {
   return (
     <MainContainer>
       {isEditReservationOpen && <ReservationDetails />}
-
       {isAddApartmentOpen && <AddApartmentModal />}
       {isAddReservationOpen && <AddReservationModal />}
       {/* {isOpen && <ModalContainer isOpen={isOpen}/>} */}

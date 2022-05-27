@@ -5,8 +5,9 @@ import { AiOutlineClose } from "react-icons/ai";
 import { MdOutlineSchedule } from "react-icons/md";
 
 export default function MessageIcon(props) {
+  console.log("TYPE = ", props.type);
   const getStatusIcon = () => {
-    switch (props.type) {
+    switch (props.icon) {
       case "added":
         return <IoAddOutline size={30} />;
       case "cancelled":

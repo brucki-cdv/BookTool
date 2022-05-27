@@ -1,6 +1,8 @@
 .header__tabs {
   padding: 0;
   margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 .header__tabs ul {

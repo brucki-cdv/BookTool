@@ -9,9 +9,6 @@
     margin-bottom: 10px;
   }
 
-  .reservation__information li:not(:last-child) {
-      
-  }
   
   .reservation__information .reservation__icon {
     min-width: 50px;
@@ -19,4 +16,6 @@
   
   .reservation__information .information__text {
     margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight:bold
   }

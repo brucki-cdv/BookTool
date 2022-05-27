@@ -5,6 +5,7 @@ import Message from "./Message";
 import Title from "../Title";
 
 const renderMessage = (message) => {
+
   return (
     <Message
       title={message.title}

@@ -1,7 +1,9 @@
 import "./ReservationOptions.css";
 import MaterialIcon from "../../Components/MaterialIcon";
 
+import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { useDispatch } from "react-redux";
+
 const ReservationOptions = (props) => {
   const dispatch = useDispatch();
 
@@ -19,13 +21,10 @@ const ReservationOptions = (props) => {
             })
           }
         >
-          <MaterialIcon name="edit" />
+          <AiOutlineEdit size={25} />
         </li>
         <li>
-          <MaterialIcon name="delete" />
-        </li>
-        <li>
-          <MaterialIcon name="visibility" />
+          <AiOutlineDelete size={25} />
         </li>
       </ul>
     </div>

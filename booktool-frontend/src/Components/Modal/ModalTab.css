@@ -8,6 +8,5 @@
 }
 
 .modal-tab.clicked {
-  color: blue;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid purple;
 }
